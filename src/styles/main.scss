@@ -18,6 +18,40 @@ a {
     text-decoration: none;
 }
 
+/* override bootstrap */
+
+.btn-primary {
+    padding: 8px 20px;
+    border-radius: 9px;
+    background-color: $light-green;
+    color: $dark-blue;
+    border-color: transparent;
+    white-space: nowrap;
+    transition: all 0.3s; 
+
+    &:hover {
+        color: $light-green;
+        background-color: $dark-blue;
+        border-color: $light-green;
+    }
+}
+
+.btn-secondary {
+    padding: 8px 20px;
+    border-radius: 9px;
+    color: $light-green;
+    background-color: $dark-blue;
+    border-color: $light-green;
+    white-space: nowrap;
+    transition: all 0.3s; 
+
+    &:hover {
+        background-color: $light-green;
+        color: $dark-blue;
+        border-color: transparent;
+    }
+}
+
 /* -- navbar styling -- */
 
 nav.navbar {
@@ -44,12 +78,10 @@ nav.navbar {
         }
     }
 
-    .btn-primary {
-        padding: 6px 20px;
-        border-radius: 9px;
-        background-color: $light-green;
-        color: $dark-blue;
-        white-space: nowrap;
+    @media (max-width: 992px) {
+        .nav-try-now {
+            display: none;
+        }
     }
 }
 
@@ -118,6 +150,25 @@ nav.navbar {
         align-self: center;
     }
 
+    .hero-try-now:hover {
+        background-color: hsl(155, 86%, 72%);
+        color: $dark-blue;
+        border-color: transparent;
+    }
+
+    .btn.watch-now svg {
+        position: relative;
+        top: -2px;
+    }
+
+    @media (max-width: 992px) {
+        .hero-try-now,
+        .watch-now {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
     .introduction-video-section {
         background: $purple-blue-gradient;
         text-align: center;
@@ -146,18 +197,9 @@ nav.navbar {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            div.d-flex {
-                height: 50vw;
+            .row {
+                height: 40vw;
             }
-        }
-    }
-
-    @media (max-width: 992px) {
-        .integrations-section div.d-flex {
-            padding: 5rem;
-            justify-content: center;
-            text-align: left;
-            margin: auto;
         }
     }
 
